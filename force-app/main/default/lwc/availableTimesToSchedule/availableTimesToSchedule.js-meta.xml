@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Scheduler Component</masterLabel>
+  <description>This is a fake scheduler component for Dreamforce '22</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="startDate" label="Start Date " type="Date" role="inputOnly"/>
+            <property name="recordCount" label="Number of records" type="Integer" role="inputOnly"/>
+            <property name="availableTimes" label="Available Time Ranges" type="String" role="inputOnly"/>
+            <property name="selectedDateString" label="Selected Start" type="String" role="outputOnly"/>
+        </targetConfig>
+ </targetConfigs>
+</LightningComponentBundle>

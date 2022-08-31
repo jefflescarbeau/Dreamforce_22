@@ -1,0 +1,24 @@
+<template>
+  <div class="slds-p-around_xx-small">
+    <lightning-slider
+      label="Record Count"
+      step="1"
+      min="1"
+      max="10"
+      value={recordCount}
+      onchange={handleRecordCountChange}
+    >
+    </lightning-slider>
+  </div>
+  <div>
+    <lightning-combobox
+      name="startDate"
+      label="Start Date Flow Variable"
+      value={startDate}
+      placeholder="Select Start Date"
+      options={options}
+      onchange={handleStartDateChange}
+    >
+    </lightning-combobox>
+  </div>
+</template>
