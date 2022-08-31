@@ -21,4 +21,13 @@
     >
     </lightning-combobox>
   </div>
+  <div>
+    <lightning-checkbox-group
+      name="Time Slots"
+      label="Time Slots"
+      options={slotOptions}
+      value={availableTimes}
+      onchange={handleSlotChange}
+    ></lightning-checkbox-group>
+  </div>
 </template>

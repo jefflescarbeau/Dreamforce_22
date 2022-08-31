@@ -1,5 +1,15 @@
 import { LightningElement, api } from 'lwc';
 
+const checkboxOptions = [
+  { label: "9AM-10AM", value: "9AM-10AM" },
+  { label: "10AM-11AM", value: "10AM-11AM" },
+  { label: "11AM-12PM", value: "11AM-12PM" },
+  { label: "1PM-2PM", value: "1PM-2PM" },
+  { label: "2PM-3PM", value: "2PM-3PM" },
+  { label: "3PM-4PM", value: "3PM-4PM" },
+  { label: "4PM-5PM", value: "4PM-5PM" }
+]
+
 export default class ScheduleEditor extends LightningElement {
   _inputVariables = [];
 
@@ -33,6 +43,14 @@ export default class ScheduleEditor extends LightningElement {
     }));
   }
 
+  get availableTimes() {
+    const param = this.inputVariables.find(({ name }) => name === 'availableTimes');
+    return param && param.value && param.value.split(',');
+  }
+  get slotOptions() {
+    return checkboxOptions;
+  }
+
   handleRecordCountChange(event) {
     if (event && event.detail) {
       const newValue = event.detail.value;
@@ -44,6 +62,13 @@ export default class ScheduleEditor extends LightningElement {
     if (event && event.detail) {
       const newValue = event.detail.value;
       this.emitInputEvent('startDate', newValue, 'reference');
+    }
+  }
+
+  handleSlotChange(event) {
+    if (event && event.detail) {
+      const newValue = String(event.detail.value);
+      this.emitInputEvent('availableTimes', newValue, 'String');
     }
   }
 

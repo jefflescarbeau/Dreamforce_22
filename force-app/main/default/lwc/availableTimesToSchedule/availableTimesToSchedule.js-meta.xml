@@ -9,7 +9,8 @@
         <target>lightning__RecordPage</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen">
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-schedule-editor">
+            <!-- <targetConfig targets="lightning__FlowScreen"> -->
             <property name="startDate" label="Start Date " type="Date" role="inputOnly"/>
             <property name="recordCount" label="Number of records" type="Integer" role="inputOnly"/>
             <property name="availableTimes" label="Available Time Ranges" type="String" role="inputOnly"/>
