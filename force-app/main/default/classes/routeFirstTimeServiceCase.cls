@@ -1,6 +1,6 @@
 public class routeFirstTimeServiceCase {
 
-    @InvocableMethod(label='Route First Time Service Case' description='returns a list of users who should own this case')
+    @InvocableMethod(label='Route First Time Service Case' description='returns a list of users who should own this case' configurationEditor='c-route-service-config')
     public static List<MyFancyResults> getRoutedUsers(List<MyFancyRequest> requestRecords) {
         User u = [Select Id, username from User where LastName = 'Lescarbeau' LIMIT 1];
         MyFancyResults fancypants = new MyFancyResults(u);

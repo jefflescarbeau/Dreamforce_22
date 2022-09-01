@@ -1,0 +1,30 @@
+<template>
+  <lightning-tabset>
+    <lightning-tab label="Instructions">
+      <div>Use the Variables tab to set the correct variables for routing</div>
+      <div>
+        Reference these variables from your record variable such as case.Id and
+        case.Type depending on what you have named your case variable in this
+        flow
+      </div>
+    </lightning-tab>
+    <lightning-tab label="Variables">
+      <div class="slds-var-p-around_medium lgc-bg">
+        <lightning-input
+          type="text"
+          label="Enter the Case Id variable"
+          onchange={handleIdInputChange}
+          value={caseId}
+        ></lightning-input>
+      </div>
+      <div class="slds-var-p-around_medium lgc-bg">
+        <lightning-input
+          type="text"
+          label="Enter the Case Type variable"
+          onchange={handleTypeInputChange}
+          value={caseType}
+        ></lightning-input>
+      </div>
+    </lightning-tab>
+  </lightning-tabset>
+</template>
