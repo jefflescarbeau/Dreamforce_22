@@ -12,18 +12,28 @@ const checkboxOptions = [
 
 export default class ScheduleEditor extends LightningElement {
   _inputVariables = [];
+  _apiOutputVariables = [];
 
   @api
   get inputVariables() {
     return this._inputVariables;
   }
 
-  @api
-  builderContext;
-
   set inputVariables(variables) {
     this._inputVariables = variables || [];
   }
+
+  @api
+  get automaticOutputVariables() {
+    return this._apiOutputVariables
+  }
+
+  set automaticOutputVariables(variables) {
+    this._apiOutputVariables = variables || [];
+  }
+
+  @api
+  builderContext;
 
   get recordCount() {
     const param = this.inputVariables.find(({ name }) => name === 'recordCount');
