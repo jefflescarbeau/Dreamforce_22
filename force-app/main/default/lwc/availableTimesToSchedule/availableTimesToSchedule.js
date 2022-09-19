@@ -19,6 +19,9 @@ export default class availableTimesToSchedule extends LightningElement {
   columns = columns;
   slots;
 
+  //example of a validate function - remember this will reset the state of the component
+  //when called, it's better (in my opinion) to use flownavigation events instead
+  //to control the page
   @api
   validate() {
     if (this.selectedRowsLength == 1) {
